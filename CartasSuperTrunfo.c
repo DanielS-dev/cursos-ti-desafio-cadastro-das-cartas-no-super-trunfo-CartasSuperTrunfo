@@ -5,7 +5,7 @@
 
 /*Desafio Super Trunfo - Países - Cadastro das Cartas
     Nível Novato: Cadastro Básico - OK
-    Nível Aventureiro: Cálculo de Atributos - Pendente
+    Nível Aventureiro: Cálculo de Atributos - OK
     Nível Mestre: Comparação e Super Poder - Pendente
 */
 
@@ -16,13 +16,13 @@ int main () {
     char codigoDaCarta[4];
     char nomeDaCidade[50];
     int populacao, numeroDePontosTuristicos;
-    float areaEmKM, PIB;
+    float areaEmKM, PIB, densidadePopulacional, PIBPerCapita;
 
     char estado2;
     char codigoDaCarta2[4];
     char nomeDaCidade2[50];
     int populacao2, numeroDePontosTuristicos2;
-    float areaEmKM2, PIB2;
+    float areaEmKM2, PIB2, densidadePopulacional2, PIBPerCapita2;
 
     //Solicitando os dados da Carta 1
     printf("Digite o estado da carta: ");
@@ -77,6 +77,14 @@ int main () {
     printf("Digite o numero de pontos turísticos da cidade: ");
     scanf("%i", &numeroDePontosTuristicos2);
 
+    //calculando a Densidade Populacional das duas cartas
+    densidadePopulacional = (float) populacao / areaEmKM;
+    densidadePopulacional2 = (float) populacao2 / areaEmKM2;
+
+    //Calculando o PIB per capita das duas cartas
+    PIBPerCapita = PIB / (float) populacao;
+    PIBPerCapita2 = PIB2 / (float) populacao2;
+
     //Imprimindo a carta 1
     printf("Carta 1: \n");
     printf("Estado: %c\n", estado);
@@ -85,17 +93,21 @@ int main () {
     printf("População: %i\n", populacao);
     printf("Área: %.2f km²\n", areaEmKM);
     printf("PIB: %.2f bilhões de reias\n", PIB);
-    printf("Numero de Pontos Turísticos: %i\n\n", numeroDePontosTuristicos);
+    printf("Numero de Pontos Turísticos: %i\n", numeroDePontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional);
+    printf("PIB per Capita: %.2f reais\n\n", PIBPerCapita);
 
     //Imprimindo a carta 2
     printf("Carta 2: \n");
-    printf("Estado: %c\n", estado);
-    printf("Código: %s\n", codigoDaCarta);
-    printf("Nome Da Cidade: %s\n", nomeDaCidade);
-    printf("População: %i\n", populacao);
-    printf("Área: %.2f km²\n", areaEmKM);
-    printf("PIB: %.2f bilhões de reias\n", PIB);
-    printf("Numero de Pontos Turísticos: %i", numeroDePontosTuristicos);
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigoDaCarta2);
+    printf("Nome Da Cidade: %s\n", nomeDaCidade2);
+    printf("População: %i\n", populacao2);
+    printf("Área: %.2f km²\n", areaEmKM2);
+    printf("PIB: %.2f bilhões de reias\n", PIB2);
+    printf("Numero de Pontos Turísticos: %i\n", numeroDePontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
+    printf("PIB per Capita: %.2f reais\n", PIBPerCapita2);
 
 return 0;
 }
